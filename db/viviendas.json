@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "nombre": "Casa o chalet independiente en venta en calle Mateo Inurria",
+    "descripcion": "Típica casa cordobesa, situada entre el Bailío y el Palacio de Viana.. . un lujo en cuanto a ubicación (en pleno centro), bonita distribución y un estilo rústico que seguro que te enamora... te gustaría conocerla?",
+    "imagenes": [
+      "https://img3.idealista.com/blur/WEB_DETAIL-XL-L/0/id.pro.es.image.master/84/3b/00/1058371808.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-XL-L/0/id.pro.es.image.master/bb/a1/a6/1058371801.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-XL-L/0/id.pro.es.image.master/23/93/6f/1058371779.jpg"
+    ],
+    "calle": "Calle Mateo Inurria",
+    "ciudad": "Córdoba",
+    "precio": "345.000€",
+    "m2": "329",
+    "planta": "0",
+    "ascensor": "No",
+    "habitaciones": "6",
+    "inmobiliaria": "Inmocodix Soluciones Inmobiliarias",
+    "telefono": "666666666",
+    "email": "prueba@gmail.com"
+  },
+  {
+    "id": "2",
+    "nombre": "Piso en venta en avenida Granada",
+    "descripcion": "¡Piso reformado en Avenida de Granada con terraza! <br/> La vivienda, una cuarta planta con ascensor, cuenta con 146 metros construidos, con una distribución muy moderna y atractiva. <br/> El piso tiene un amplio hall de entrada o recibidor. La cocina/office cuenta también con un tamaño algo más grande de la media con la ventaja de tener ventana al exterior. Junto a la cocina disponemos de un amplio salón comedor, muy luminoso y con acceso a terraza de excelente tamaño, y con vistas también a la propia avenida. <br/> Un pasillo distribuidor, nos conduce a la zona de descanso con tres amplios dormitorios con los que cuenta la vivienda, y dos baños (uno de ellos en suite). Todas las estancias tienen ventana a la calle, excepto un baño que es interior. <br/> El piso es muy luminoso y con una ventilación natural cruzada excelente. <br/> En lo que a calidades y acabados actuales de la vivienda, comentar que se encuentra en perfecto estado de conservación. <br/> Vivienda con reforma integral muy reciente y buenos materiales constructivos como son suelo gres imitación tarima, carpintería de madera haya/roble, carpintería metálica de climalic color blanco, mosquiteras en todas las ventanas, climatización centralizada frio/calor, armarios empotrados de gran capacidad y una pequeña habitación vestidor, etc, etc).",
+    "imagenes": [
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/b3/a7/a7/1058374307.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/17/f4/b6/1058374342.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/9d/69/9e/1058374363.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/c3/fd/3c/1058374308.jpg"
+    ],
+    "calle": "Avenida Granada",
+    "ciudad": "Córdoba",
+    "precio": "157.900€",
+    "m2": "146",
+    "planta": "4",
+    "ascensor": "Si",
+    "habitaciones": "3",
+    "inmobiliaria": "Inmocodix Soluciones Inmobiliarias",
+    "telefono": "666666666",
+    "email": "prueba@gmail.com"
+  },
+  {
+    "id": "3",
+    "nombre": "Piso en venta en calle Infanta Doña María",
+    "descripcion": "Bonito piso totalmente reformado en venta en Ciudad Jardín. La vivienda cuenta con 63 metros cuadrados útiles que se distribuyen en salón comedor, cocina independiente 3 dormitorios y 1 cuarto de baño. Se encuentra en una primera planta y dispone de patio de comunidad de uso privado y terraza. Climatización por conductos, reforma integral incluidos instalación eléctrica y fontanería. La vivienda se encuentra muy bien ubicada cercana a comercios, centros de salud, colegios etc.",
+    "imagenes": [
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/c6/62/33/1009497337.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/7a/75/29/1009497301.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/8a/1a/59/1009497338.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/d8/67/7a/1009497353.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/12/af/cf/1009497359.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/99/60/1b/1009497362.jpg"
+    ],
+    "calle": "Calle Infanta Doña María",
+    "ciudad": "Córdoba",
+    "precio": "104.990€",
+    "m2": "64",
+    "planta": "1",
+    "ascensor": "No",
+    "habitaciones": "3",
+    "inmobiliaria": "INMOAROA",
+    "telefono": "666666666",
+    "email": "prueba@gmail.com"
+  },
+  {
+    "id": "4",
+    "nombre": "Piso en venta en camino de la Albaida, 2",
+    "descripcion": "PISO SITUADO EN MEDINA HOMES, CON TRES DORMITORIOS, TERRAZA DE 14 METROS Y PLAZA DE GARAJE MÁS TRASTERO. </br> Ubicado en una de las urbanizaciones más demandadas de nuestra ciudad, con piscina y zonas comunitarias, este piso prácticamente a estrenar, destaca además por su perfecta ubicación (junto al parador de La Arruzafa) su práctica distribución, su magnífica luz (al ocupar una esquina del edificio), su inmejorable orientación, y sus privilegiadas vistas de la Sierra! </br> Terminado en 2019, tiene excelentes calidades como mármol de alta calidad, cierres premium, puertas lacadas en blanco, armarios empotrados en todos los dormitorios, aire acondicionado, calefacción por radiadores, domótica con detectores de incendios, inundación y gases para que vivas más tranquilo y confortable.La distribución es muy cómoda y cuadrada, distinguiendo la zona de día dónde tenemos la cocina y el salón, comunicados por un espacio lateral abierto, y la terraza, con 14 m2 para poder disfrutarla en compañía o a solas contemplando la espectacular sierra cordobesa. Por otro lado encontramos la zona de noche, dónde están los 3 dormitorios y los 2 baños, uno de ellos en suite dentro del dormitorio principal.El precio incluye además, una gran plaza de garaje y un buen trastero… te gustaría conocerlo?",
+    "imagenes": [
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/9c/3d/a7/1059076013.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/f5/88/24/1059076010.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/9a/8b/2a/1059076053.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/fe/7a/84/1059076042.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-L/0/id.pro.es.image.master/ed/95/98/1059076064.jpg"
+    ],
+    "calle": "Calle Camino de La Albaida nº 2",
+    "ciudad": "Córdoba",
+    "precio": "359.000€",
+    "m2": "126",
+    "planta": "1",
+    "ascensor": "Si",
+    "habitaciones": "3",
+    "inmobiliaria": "Inmocodix",
+    "telefono": "666666666",
+    "email": "prueba@gmail.com"
+  },
+  {
+    "id": "5",
+    "nombre": "Piso en venta en carretera de trassierra, 17",
+    "descripcion": "Piso reformado de luz y agua. Ascensor. Cocina de madera de cerezo con terraza lavadero. Salón muy amplio y luminoso con terraza. Baño con mueble de obra y madera de roble. Aire en salón y dormitorio principal. Aprobada obra de remodelación de la avenida de Trassierra, próximas a comenzar las obras, el portal queda a pie de la nueva avenida, con arboleda, carril bici hasta el Vial e Hipercor y rodeado de nuevas construcciones. Bloque muy tranquilo con buen vecindario. Ideal como inversión, al estar próximo a Renfe siempre ha estado alquilado. Abstenerse inmobiliarias.",
+    "imagenes": [
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-P/0/id.pro.es.image.master/e0/96/38/1051099240.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-P/0/id.pro.es.image.master/27/fc/37/1051099079.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-P/0/id.pro.es.image.master/51/6b/29/1051099050.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-P/0/id.pro.es.image.master/8e/69/8c/1051099334.jpg",
+      "https://img3.idealista.com/blur/WEB_DETAIL-L-P/0/id.pro.es.image.master/93/e6/0b/1051099341.jpg"
+    ],
+    "calle": "Carretera de Trassierra, 17",
+    "ciudad": "Córdoba",
+    "precio": "120.000€",
+    "m2": "90",
+    "planta": "2",
+    "ascensor": "Si",
+    "habitaciones": "3",
+    "inmobiliaria": "Particular",
+    "telefono": "666666666",
+    "email": "prueba@gmail.com"
+  }
+]
