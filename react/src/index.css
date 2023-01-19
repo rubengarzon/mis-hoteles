@@ -4,8 +4,15 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  background: #222;
+  font-family: system-ui;
+  display: grid;
+  place-content: center;
   min-height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
