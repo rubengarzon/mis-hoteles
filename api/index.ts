@@ -19,4 +19,14 @@ app.get("/viviendas", (c) => {
   return c.json(viviendas);
 });
 
+app.get("/viviendas/:ciudad", (c) => {
+  const ciudad = c.req.param("ciudad");
+  const viviendasCiudad = viviendas.filter(
+    (vivienda) => vivienda.ciudad === ciudad
+  );
+  return viviendasCiudad
+    ? c.json(viviendasCiudad)
+    : c.json({ message: "No hay ninguna casa o piso en esa Ciudad" }, 404);
+});
+
 export default app;

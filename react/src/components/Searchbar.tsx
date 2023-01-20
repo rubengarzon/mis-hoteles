@@ -9,7 +9,7 @@ export default function SearchBar() {
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    getHouse();
+    getHouse(inputValue).then((res) => console.log(res));
   };
 
   return (
