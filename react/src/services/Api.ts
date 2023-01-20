@@ -1,5 +1,7 @@
-export const getHouse = () => {
-  fetch("http://127.0.0.1:8787/viviendas")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+import { House } from "../types";
+
+export const getHouse = async (ciudad: string): Promise<House> => {
+  return fetch(`http://127.0.0.1:8787/viviendas/${ciudad}`).then((response) =>
+    response.json()
+  );
 };
