@@ -7,8 +7,16 @@ body {
   background: #222;
   font-family: system-ui;
   display: grid;
-  place-content: center;
+  justify-content: center;
   min-height: 100vh;
+  color: #fff;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  min-width: 100vh;
 }
 
 * {
