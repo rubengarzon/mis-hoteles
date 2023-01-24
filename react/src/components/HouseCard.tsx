@@ -1,18 +1,40 @@
-export default function HouseCard({ key, house }: any) {
+import React, { useEffect } from "react";
+
+export default function HouseCard({ house }: any) {
   return (
     <>
-      <div className="bg-white text-black rounded-md mt-10 w-full cursor-pointer">
-        <div className="flex">
+      <div className="bg-sky-200 text-black rounded-lg mt-10 w-1/4 h-80 cursor-pointer hover:scale-105 transition duration-700">
+        <div className="flex flex-col">
           <img
             src={house.imagenes[1]}
             alt={house.nombre}
-            className="w-72 h-auto"
+            className="w-full h-36 object-cover rounded-lg"
           />
-          <div className="flex flex-col text-center w-full">
-            <h2 key={key} className="text-lg">
+          <div className="flex flex-col text-center">
+            <h2
+              key={house.id}
+              className="text-md mt-2 font-extrabold text-indigo-900"
+            >
               {house.nombre}
             </h2>
-            <span className="text-md font-bold">{house.precio}</span>
+            <p className="text-xs text-gray-700 font-semibold mt-4">
+              {house.descripcion.substring(0, 50)}...
+            </p>
+            <div className="flex self-center mt-4">
+              <span className="text-xs text-gray-700 font-bold mt-2 mr-2">
+                🛏️ {house.habitaciones} habitaciones
+              </span>
+              <span className="text-xs text-gray-700 font-bold mt-2 mr-2">
+                🏠 {house.m2} m2
+              </span>
+              <span className="text-xs text-gray-700 font-bold mt-2">
+                🏢 {house.planta === "0" ? "Casa" : "Planta " + house.planta}{" "}
+                {house.ascensor === "Si" ? "con ascensor" : "sin ascensor"}
+              </span>
+            </div>
+            <span className="text-lg font-extrabold text-indigo-900 mt-7">
+              {house.precio}
+            </span>
           </div>
         </div>
       </div>

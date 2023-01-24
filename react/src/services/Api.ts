@@ -4,8 +4,10 @@ import { House } from "../types";
  * @param ciudad - Ciudad de la que se quieren obtener las viviendas
  * @returns - Array de viviendas de la ciudad indicada
  */
-export const getHousesByCity = async (ciudad: string): Promise<House> => {
-  return fetch(`http://127.0.0.1:8787/viviendas/${ciudad}`).then((response) =>
-    response.json()
-  );
+export const getHousesByCity = (ciudad: string): Promise<House> => {
+  return fetch(`http://127.0.0.1:8787/viviendas/${ciudad}`)
+    .then((response) => response.json())
+    .catch(() => {
+      console.log("Error al obtener las viviendas");
+    });
 };

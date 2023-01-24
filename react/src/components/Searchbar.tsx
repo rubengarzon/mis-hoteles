@@ -1,24 +1,53 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CIUDADES } from "../constants.js";
 
-export default function SearchBar({ handleHouses }: any) {
+export default function SearchBar() {
   const [inputValue, setInputValue] = useState<string>("");
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+    // solo se aceptan letras y espacios
+    if (e.target.value.match(/[a-zA-Z ]/g)) {
+      setError("");
+      setInputValue(e.target.value.trim());
+    } else {
+      setError("numbers");
+      setInputValue("");
+    }
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (inputValue === "") {
-      setError(true);
+      setError("empty");
     } else {
-      setError(false);
-      handleHouses(inputValue);
-      clearInput();
-      navigate(`/viviendas/${inputValue}`);
+      if (CIUDADES.includes(inputValue) === true) {
+        setError("");
+        clearInput();
+        navigate(`/viviendas/${inputValue}`);
+      }
+    }
+  };
+
+  const renderSwitch = (param: string) => {
+    switch (param) {
+      case "empty":
+        return (
+          <span className="bg-red-500 text-white font-semibold p-1 rounded-md">
+            ⚠️ Escribe una ciudad
+          </span>
+        );
+      case "numbers":
+        return (
+          <span className="bg-red-500 text-white font-semibold p-1 rounded-md">
+            ⚠️ Solo se aceptan letras
+          </span>
+        );
+        break;
+      default:
+        break;
     }
   };
 
@@ -36,6 +65,7 @@ export default function SearchBar({ handleHouses }: any) {
               type="text"
               placeholder="Ciudad"
               onChange={handleChange}
+              value={inputValue}
             />
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white text-3xl font-bold py-2 px-4 rounded-lg"
@@ -44,11 +74,7 @@ export default function SearchBar({ handleHouses }: any) {
               🔎
             </button>
           </form>
-          {error === true ? (
-            <span className="bg-red-500 text-white font-semibold p-1 rounded-md">
-              ⚠️ Escribe una ubicación donde buscar
-            </span>
-          ) : null}
+          {error && renderSwitch(error)}
         </div>
       </div>
     </>

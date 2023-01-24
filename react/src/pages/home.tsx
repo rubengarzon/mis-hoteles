@@ -10,12 +10,6 @@ interface FormState {
 }
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState<any>();
-
-  const handleHouses = (inputValue: any) => {
-    setInputValue(inputValue); // Aquí se guarda el valor del input
-  };
-
   return (
     <div className="App">
       <Header />
@@ -28,7 +22,7 @@ export default function Home() {
           asequibles.
         </p>
       </div>
-      <SearchBar handleHouses={handleHouses} />
+      <SearchBar />
 
       {/* <HouseList inputValue={inputValue} /> */}
       {/* <Footer /> */}

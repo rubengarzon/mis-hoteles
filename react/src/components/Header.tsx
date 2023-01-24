@@ -1,10 +1,15 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <>
       <header className="flex items-center mt-4 justify-center">
-        <h1 className="text-4xl font-bold text-indigo-900 fuente hover:underline hover:cursor-pointer">
+        <Link
+          to="/"
+          className="text-4xl font-bold text-indigo-900 fuente hover:underline hover:cursor-pointer"
+        >
           mispisos.es
-        </h1>
+        </Link>
         <nav className="ml-64">
           <ul className="flex">
             <li className="mr-7 text-indigo-900 border-2 border-indigo-500 border-opacity-60 rounded-lg border-solid p-1 hover:border-indigo-900 font-semibold">

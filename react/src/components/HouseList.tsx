@@ -1,32 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getHousesByCity } from "../services/Api";
 import HouseCard from "./HouseCard";
+import { House } from "../types";
 
-export default function HouseList({ inputValue }: any) {
-  const [houses, setHouses] = useState<any>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    getHousesByCity(inputValue).then((res: any) => {
-      setHouses(res);
-      setLoading(false);
-    });
-  }, [inputValue]);
-
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (error) {
-    return <h1>Error</h1>;
-  }
-
+export default function HouseList({
+  fetchHouse,
+  housesNumberTotal,
+  city,
+}: House[]) {
   return (
-    <div className="flex flex-col items-center">
-      {houses.map((house: any) => (
-        <HouseCard key={house.id} house={house} />
-      ))}
-    </div>
+    <>
+      <section className="mt-14">
+        <h2 className="text-center font-semibold text-2xl text-indigo-900">
+          {housesNumberTotal} Viviendas en {city}
+        </h2>
+        <div className="flex flex-col items-center">
+          {fetchHouse.map((house: any) => (
+            <HouseCard key={house.id} house={house}></HouseCard>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
