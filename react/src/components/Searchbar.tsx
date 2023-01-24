@@ -27,6 +27,8 @@ export default function SearchBar() {
         setError("");
         clearInput();
         navigate(`/viviendas/${inputValue}`);
+      } else {
+        setError("notFound");
       }
     }
   };
@@ -43,6 +45,12 @@ export default function SearchBar() {
         return (
           <span className="bg-red-500 text-white font-semibold p-1 rounded-md">
             ⚠️ Solo se aceptan letras
+          </span>
+        );
+      case "notFound":
+        return (
+          <span className="bg-red-500 text-white font-semibold p-1 rounded-md">
+            ⚠️ No se han encontrado viviendas en {inputValue}
           </span>
         );
         break;
