@@ -7,8 +7,6 @@ export interface House {
   ciudad: string;
   precio: number;
   m2: number;
-  planta: number;
-  ascensor: string;
   habitaciones: number;
   inmobiliaria: string;
   telefono: number;

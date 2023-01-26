@@ -6,7 +6,7 @@ export default function HouseCard({ house }: any) {
       <div className="bg-sky-200 text-black rounded-lg mt-10 w-1/4 h-80 cursor-pointer hover:scale-105 transition duration-700">
         <div className="flex flex-col">
           <img
-            src={house.imagenes[1]}
+            src={house.imagenes[0]}
             alt={house.nombre}
             className="w-full h-36 object-cover rounded-lg"
           />
@@ -25,7 +25,7 @@ export default function HouseCard({ house }: any) {
                 🛏️ {house.habitaciones} habitaciones
               </span>
               <span className="text-xs text-gray-700 font-bold mt-2 mr-2">
-                🏠 {house.m2} m2
+                🏠 {house.m2} m²
               </span>
               <span className="text-xs text-gray-700 font-bold mt-2">
                 🏢 {house.planta === "0" ? "Casa" : "Planta " + house.planta}{" "}

@@ -1,1 +1,1 @@
-export const CIUDADES = ["Córdoba"];
+export const CIUDADES = ["Córdoba", "Jaén", "Madrid", "Barcelona"];
