@@ -1,0 +1,1 @@
+DELETE http://localhost:3001/api/viviendas/63d40c62d0a71ebdcd4b6387
