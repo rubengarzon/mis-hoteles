@@ -1,6 +1,19 @@
 import React, { useEffect } from "react";
 
 export default function HouseCard({ house }: any) {
+  /**
+   * Formatea el precio de la vivienda
+   * @returns Formatted price
+   */
+  const currencyFormatter = () => {
+    let formatter = new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      minimumFractionDigits: 0,
+      currency: "EUR",
+    });
+    return formatter.format(house.precio);
+  }
+
   return (
     <>
       <div className="bg-sky-200 text-black rounded-lg mt-10 w-1/4 h-80 cursor-pointer hover:scale-105 transition duration-700">
@@ -33,7 +46,7 @@ export default function HouseCard({ house }: any) {
               </span>
             </div>
             <span className="text-lg font-extrabold text-indigo-900 mt-7">
-              {house.precio}
+              {currencyFormatter()}
             </span>
           </div>
         </div>
