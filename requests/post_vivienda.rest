@@ -1,28 +1,43 @@
 POST http://localhost:3001/api/viviendas
 Content-Type: application/json
+
 {
-  "tipo": "piso",
-  "nombre": "Pisooooo",
-  "descripcion": "Pisoooooo en venta en calle de la paz",
-  "imagenes": [],
-  "calle": "Calle de la paz",
-  "ciudad": "Madrid",
-  "precio": 100000,
-  "m2": 100,
-  "planta": 1,
-  "habitaciones": 3,
-  "baños": 2,
-  "caracteristicas": {
-    "tipoInmueble": "Piso",
-    "aguaCaliente": "Individual",
-    "estado": "Para reformar",
-    "ascensor": true,
-    "consumoEnergetico": "E",
-    "emisiones": "E"
-  },
-  "extra": ["Amueblado", "Trastero", "Terraza"],
-  "inmobiliaria": "Inmobiliaria 1",
-  "imagenInmobiliaria": "https://picsum.photos/200/300",
-  "telefono": 123456789,
-  "email": "prueba@gmail.com"
+   "tipo":"comprar",
+   "nombre":"Piso en venta en Casco Histórico - Ribera - San Basilio",
+   "descripcion":"Presentamos vivienda ubicada en el barrio de San Francisco, zona céntrica e ideal para inversores que quieran una vivienda totalmente reformada y utilizarla como apartamento turístico. Cerca de la mezquita catedral. Vivienda totalmente reformada ubicada en primera planta. Se distribuye de la siguiente manera, entrada recibidor con armario empotrado, el pasillo distribuidor da acceso a dormitorio con armario empotrado, amplio salón totalmente independiente con acceso a cuarto de baño completo con placa ducha, dormitorio con armario empotrado, baño completo con placa ducha y amplia cocina totalmente equipada que da acceso a un patio terraza de 7 metros cuadrados.No pierdas esta grandísima oportunidad y solicita información",
+   "imagenes":[
+      "https://static.inmofactory.com/images/inmofactory/documents/1/90560/32443891/527837681.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/90560/32443891/527837682.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/90560/32443891/527837683.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/90560/32443891/527837684.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/90560/32443891/527837686.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/90560/32443891/527837687.jpg?rule=web_1200x0"
+   ],
+   "calle":"Centro",
+   "ciudad":"Córdoba",
+   "precio":120000,
+   "m2":65,
+   "planta":1,
+   "habitaciones":2,
+   "baños":2,
+   "caracteristicas":{
+      "tipoInmueble":"Piso",
+      "orientacion": "",
+      "antigüedad": "",
+      "parking": "",
+      "aguaCaliente":"",
+      "calefaccion":"",
+      "estado":"",
+      "ascensor": null,
+      "consumoEnergetico":"G",
+      "emisiones":"G",
+      "amueblado": null
+   },
+   "extra":[
+      "Aire acondicionado","Calefacción","Patio", "Electrodomésticos", "Cocina Equipada"
+   ],
+   "inmobiliaria":"INMOBILIARIA CALIFAL",
+   "imagenInmobiliaria":"https://static.fotocasa.es/images/client/9202751781762/624732.jpg?rule=web_100x52",
+   "telefono":123456789,
+   "email":"prueba@gmail.com"
 }

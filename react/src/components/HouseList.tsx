@@ -4,10 +4,10 @@ import HouseCard from "./HouseCard";
 import { House } from "../types";
 
 export default function HouseList({
-  fetchHouse,
+  listFlat,
   housesNumberTotal,
   city,
-}: House[]) {
+}: any) {
   return (
     <>
       <section className="mt-14">
@@ -15,7 +15,7 @@ export default function HouseList({
           {housesNumberTotal} Viviendas en {city}
         </h2>
         <div className="flex flex-col items-center">
-          {fetchHouse.map((house: any) => (
+          {listFlat.map((house: any) => (
             <HouseCard key={house.id} house={house}></HouseCard>
           ))}
         </div>

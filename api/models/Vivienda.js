@@ -18,7 +18,12 @@ const viviendaSchema = new mongoose.Schema({
     estado: String,
     ascensor: Boolean,
     consumoEnergetico: String,
-    emisiones: String
+    emisiones: String,
+    parking: String,
+    antigüedad: String,
+    amueblado: Boolean,
+    calefaccion: String,
+    orientacion: String
   },
   extra: [{ type: String }],
   inmobiliaria: String,
@@ -37,42 +42,5 @@ viviendaSchema.set('toJSON', {
 
 // definicion del modelo
 const Vivienda = mongoose.model('Vivienda', viviendaSchema)
-
-/* const vivienda = new Vivienda({
-  tipo: 'piso',
-  nombre: 'Piso en venta en calle de la paz',
-  descripcion: 'Piso en venta en calle de la paz',
-  imagenes: [],
-  calle: 'Calle de la paz',
-  ciudad: 'Madrid',
-  precio: 100000,
-  m2: 100,
-  planta: 1,
-  habitaciones: 3,
-  baños: 2,
-  caracteristicas: {
-    tipoInmueble: 'Piso',
-    aguaCaliente: 'Individual',
-    estado: 'Para reformar',
-    ascensor: true,
-    consumoEnergetico: 'E',
-    emisiones: 'E'
-  },
-  extra: ['Amueblado', 'Trastero', 'Terraza'],
-  inmobiliaria: 'Inmobiliaria 1',
-  imagenInmobiliaria: 'https://picsum.photos/200/300',
-  telefono: 123456789,
-  email: 'prueba@gmail.com'
-})
-
-vivienda
-  .save()
-  .then((vivienda) => {
-    console.log(vivienda)
-    mongoose.connection.close()
-  })
-  .catch((err) => {
-    console.log(err)
-  }) */
 
 module.exports = Vivienda

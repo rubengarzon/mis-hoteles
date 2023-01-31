@@ -10,7 +10,8 @@ export default function Flat() {
   const [houses, setHouses] = useState<House[]>([]);
 
   useEffect(() => {
-    getHousesByCity(ciudad).then((data) => {
+    if(!ciudad) return;
+    getHousesByCity(ciudad).then((data:any) => {
       setHouses(data);
     });
   }, []);
@@ -19,7 +20,7 @@ export default function Flat() {
     <div>
       <Header />
       <HouseList
-        fetchHouse={houses}
+        listFlat={houses}
         city={ciudad}
         housesNumberTotal={houses.length}
       />

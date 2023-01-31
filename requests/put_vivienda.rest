@@ -1,28 +1,43 @@
-PUT http://localhost:3001/api/viviendas/5f9b9b0b0b9b9b0b0b9b9b0b
+PUT http://localhost:3001/api/viviendas/63d8032ec7e96fdc99a90f5b
 Content-Type: application/json
-{
-  "tipo": "piso",
-  "nombre": "Pisooooo",
-  "descripcion": "Pisoooooo en venta en calle de la paz",
-  "imagenes": [],
-  "calle": "Calle de la paz",
-  "ciudad": "Madrid",
-  "precio": 100000,
-  "m2": 100,
-  "planta": 1,
-  "habitaciones": 3,
-  "baños": 2,
-  "caracteristicas": {
-    "tipoInmueble": "Piso",
-    "aguaCaliente": "Individual",
-    "estado": "Para reformar",
-    "ascensor": true,
-    "consumoEnergetico": "E",
-    "emisiones": "E"
-  },
-  "extra": ["Amueblado", "Trastero", "Terraza"],
-  "inmobiliaria": "Inmobiliaria 1",
-  "imagenInmobiliaria": "https://picsum.photos/200/300",
-  "telefono": 123456789,
-  "email": "prueba@gmail.com"
-}
+
+  {
+    "caracteristicas": {
+      "tipoInmueble": "Piso",
+      "aguaCaliente": "",
+      "estado": "",
+      "ascensor": false,
+      "consumoEnergetico": "G",
+      "emisiones": "G",
+      "parking": "Privado",
+      "antigüedad": "30 a 50 años"
+    },
+    "tipo": "comprar",
+    "nombre": "Piso en venta en Peñamefecit - Avda Barcelona",
+    "descripcion": "Amplia vivienda muy luminosa con plaza de aparcamiento en el mismo edificio.Piso reformado con 160 m2 construidos, distribuidos en:Hall de entrada holgado con armario ropero, Salón amplio con dos ventanales al exterior, cocina amueblada con encimera de mármol y mesa para comer, la cocina en sus orígenes tenia terraza lavadero la cual se le dio a la misma para hacerla más amplia, despensa y dos ventanas dobles al exterior.4 Dormitorios : Principal bastante amplio y con vista al castillo dando a la avenida Barcelona, un segundo dormitorio doble ( en la actualidad sala- estar) con la mismas vistas y orientación que el principal, un tercer dormitorio doble con armario empotrado con puertas correderas y vestido, y un cuarto dormitorio, dos baños el principal con plato de ducha y mampara de cristal haciendo esquina y un segundo baño con plato de ducha y mampara rectangular y mueble de lavabo de diseño.Dispone de una pequeña habitación destina a lavadora, secadora y termo de agua.",
+    "imagenes": [
+      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513696.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513697.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513698.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513699.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513700.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513701.jpg?rule=web_1200x0"
+    ],
+    "calle": "Avda. Barcelona",
+    "ciudad": "Jaén",
+    "precio": 180000,
+    "m2": 133,
+    "planta": 4,
+    "habitaciones": 4,
+    "baños": 2,
+    "extra": [
+      "Aire acondicionado",
+      "Calefacción",
+      "Electrodomésticos",
+      "Cocina Equipada"
+    ],
+    "inmobiliaria": "LIVIN GESTION INMOBILIARIA",
+    "imagenInmobiliaria": "https://static.fotocasa.es/images/client/6e997639-463f-45c9-ac2f-a367670659ca/20220909115720.jpeg?rule=web_100x52",
+    "telefono": 123456789,
+    "email": "prueba@gmail.com"
+  }
