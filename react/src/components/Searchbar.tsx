@@ -74,7 +74,13 @@ export default function SearchBar() {
               placeholder="Ciudad"
               onChange={handleChange}
               value={inputValue}
+              list="cities"
             />
+            <datalist id="cities">
+              {CIUDADES.map((city) => (
+                <option key={city} value={city} />
+              ))}
+            </datalist>
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white text-3xl font-bold py-2 px-4 rounded-lg"
               type="submit"
