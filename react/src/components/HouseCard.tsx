@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-
 export default function HouseCard({ house }: any) {
   /**
    * Formatea el precio de la vivienda
@@ -16,7 +14,7 @@ export default function HouseCard({ house }: any) {
 
   return (
     <>
-      <div className="bg-sky-200 text-black rounded-lg mt-10 w-1/4 h-80 cursor-pointer hover:scale-105 transition duration-700">
+      <div className="bg-sky-200 text-black rounded-lg mt-10 w-1/4 h-[340px] cursor-pointer hover:scale-105 transition duration-700">
         <div className="flex flex-col">
           <img
             src={house.imagenes[0]}
