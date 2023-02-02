@@ -25,6 +25,19 @@ app.get('/api/viviendas', (req, res) => {
     res.json(viviendas)
   })
 })
+// Obtener viviendas por tipoInmueble
+app.get('/api/viviendas/tipoInmueble/:tipoInmueble', (req, res, next) => {
+  const tipoInmueble = req.params.tipoInmueble
+  Vivienda.find({ 'caracteristicas.tipoInmueble': tipoInmueble }).then((viviendas) => {
+    if (viviendas) {
+      res.json(viviendas)
+    } else {
+      res.status(404).end()
+    }
+  }).catch((error) => {
+    next(error)
+  })
+})
 // Obtener una vivienda por una ciudad
 app.get('/api/viviendas/:busqueda', (req, res, next) => {
   const busqueda = req.params.busqueda
