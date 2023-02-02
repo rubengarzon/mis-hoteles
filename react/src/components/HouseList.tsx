@@ -6,13 +6,13 @@ import { House } from "../types";
 export default function HouseList({
   listFlat,
   housesNumberTotal,
-  city,
+  busqueda,
 }: any) {
   return (
     <>
       <section className="mt-14">
         <h2 className="text-center font-semibold text-2xl text-indigo-900">
-          {housesNumberTotal} Viviendas en {city}
+          {housesNumberTotal} Viviendas en {busqueda}
         </h2>
         <div className="flex flex-col items-center">
           {listFlat.map((house: any) => (

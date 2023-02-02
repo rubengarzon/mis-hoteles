@@ -23,10 +23,17 @@ export default function SearchBar() {
     if (inputValue === "") {
       setError("empty");
     } else {
-      if (CIUDADES.includes(inputValue) === true) {
+      // inputvalue quitar acentos y mayusculas
+      const inputValueSinAcentos = inputValue.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const inputValueNew = inputValueSinAcentos.toLowerCase();
+      // agregar a un nuevo array las ciudades sin acentos y minusculas
+      const NEW_CITIES = CIUDADES.map((city) => {
+        return city.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      });
+      if (NEW_CITIES.includes(inputValueNew) === true) {
         setError("");
         clearInput();
-        navigate(`/viviendas/${inputValue}`);
+        navigate(`/viviendas/${inputValueNew}`);
       } else {
         setError("notFound");
       }

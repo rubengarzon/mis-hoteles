@@ -7,8 +7,8 @@ const API_URL = "http://127.0.0.1:3001/api/";
  * @param ciudad - Ciudad de la que se quieren obtener las viviendas
  * @returns - Array de viviendas de la ciudad indicada
  */
-export const getHousesByCity = (ciudad: string): Promise<House> => {
-  return fetch(`${API_URL}viviendas/${ciudad}`)
+export const getHousesByCity = (busqueda: string): Promise<House> => {
+  return fetch(`${API_URL}viviendas/${busqueda}`)
     .then((response) => response.json())
     .catch(() => {
       console.log("Error al obtener las viviendas");

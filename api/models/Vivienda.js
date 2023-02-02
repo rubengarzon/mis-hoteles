@@ -7,6 +7,7 @@ const viviendaSchema = new mongoose.Schema({
   imagenes: [{ type: String }],
   calle: String,
   ciudad: String,
+  busqueda: String,
   precio: Number,
   m2: Number,
   planta: Number,

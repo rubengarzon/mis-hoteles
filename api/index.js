@@ -26,9 +26,9 @@ app.get('/api/viviendas', (req, res) => {
   })
 })
 // Obtener una vivienda por una ciudad
-app.get('/api/viviendas/:ciudad', (req, res, next) => {
-  const ciudad = req.params.ciudad
-  Vivienda.find({ ciudad }).then((viviendas) => {
+app.get('/api/viviendas/:busqueda', (req, res, next) => {
+  const busqueda = req.params.busqueda
+  Vivienda.find({ busqueda }).then((viviendas) => {
     if (viviendas) {
       res.json(viviendas)
     } else {

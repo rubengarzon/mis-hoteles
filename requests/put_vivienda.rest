@@ -25,6 +25,7 @@ Content-Type: application/json
     ],
     "calle": "Avda. Barcelona",
     "ciudad": "Jaén",
+    "busqueda": "jaen",
     "precio": 180000,
     "m2": 133,
     "planta": 4,

@@ -6,12 +6,12 @@ import Header from "../components/Header";
 import HouseList from "../components/HouseList";
 
 export default function Flat() {
-  const { ciudad } = useParams();
+  const { busqueda } = useParams();
   const [houses, setHouses] = useState<House[]>([]);
 
   useEffect(() => {
-    if(!ciudad) return;
-    getHousesByCity(ciudad).then((data:any) => {
+    if(!busqueda) return;
+    getHousesByCity(busqueda).then((data:any) => {
       setHouses(data);
     });
   }, []);
@@ -21,7 +21,7 @@ export default function Flat() {
       <Header />
       <HouseList
         listFlat={houses}
-        city={ciudad}
+        city={busqueda}
         housesNumberTotal={houses.length}
       />
     </div>
