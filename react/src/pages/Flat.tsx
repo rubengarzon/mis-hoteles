@@ -4,14 +4,21 @@ import { getHousesByCity } from "../services/Api";
 import { House } from "../types";
 import Header from "../components/Header";
 import HouseList from "../components/HouseList";
+import Filters from "../components/Filters";
 
 export default function Flat() {
   const { busqueda } = useParams();
   const [houses, setHouses] = useState<House[]>([]);
+  const [city, setCity] = useState<string>("");
+
+  const updateHouses = (data: House[]) => {
+    setHouses(data);
+  };
 
   useEffect(() => {
     if(!busqueda) return;
     getHousesByCity(busqueda).then((data:any) => {
+      setCity(data[0].ciudad);
       setHouses(data);
     });
   }, []);
@@ -19,9 +26,10 @@ export default function Flat() {
   return (
     <div>
       <Header />
+      <Filters updateHouses={updateHouses} busqueda={busqueda}/>
       <HouseList
         listFlat={houses}
-        city={busqueda}
+        city={city}
         housesNumberTotal={houses.length}
       />
     </div>

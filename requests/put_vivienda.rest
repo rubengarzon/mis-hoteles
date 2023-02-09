@@ -1,44 +1,49 @@
-PUT http://localhost:3001/api/viviendas/63d8032ec7e96fdc99a90f5b
+PUT http://localhost:3001/api/viviendas/63d8008ae10623f3bf7b6dba
 Content-Type: application/json
 
-  {
+   {
     "caracteristicas": {
       "tipoInmueble": "Piso",
       "aguaCaliente": "",
       "estado": "",
-      "ascensor": false,
-      "consumoEnergetico": "G",
-      "emisiones": "G",
-      "parking": "Privado",
-      "antigüedad": "30 a 50 años"
+      "ascensor": true,
+      "consumoEnergetico": "D",
+      "emisiones": "D",
+      "parking": "Privado"
     },
     "tipo": "comprar",
-    "nombre": "Piso en venta en Peñamefecit - Avda Barcelona",
-    "descripcion": "Amplia vivienda muy luminosa con plaza de aparcamiento en el mismo edificio.Piso reformado con 160 m2 construidos, distribuidos en:Hall de entrada holgado con armario ropero, Salón amplio con dos ventanales al exterior, cocina amueblada con encimera de mármol y mesa para comer, la cocina en sus orígenes tenia terraza lavadero la cual se le dio a la misma para hacerla más amplia, despensa y dos ventanas dobles al exterior.4 Dormitorios : Principal bastante amplio y con vista al castillo dando a la avenida Barcelona, un segundo dormitorio doble ( en la actualidad sala- estar) con la mismas vistas y orientación que el principal, un tercer dormitorio doble con armario empotrado con puertas correderas y vestido, y un cuarto dormitorio, dos baños el principal con plato de ducha y mampara de cristal haciendo esquina y un segundo baño con plato de ducha y mampara rectangular y mueble de lavabo de diseño.Dispone de una pequeña habitación destina a lavadora, secadora y termo de agua.",
+    "nombre": "Piso en venta en Jose Flores Camara, Ciudad Jardín - Zoco",
+    "descripcion": "En el Zoco, a un lado el Centro Comercial y al otro el centro deportivo Forus (Poniente) y situado en una tranquila calle peatonal (Pasaje José Flores Cámara) encontrarás un coqueto piso justo como tú querías.Se trata de una 3º planta con ascensor en uno de los edificios más emblemáticos de la zona, Edificio Danubio, construido con altísimas calidades por la empresa Angel Tirado, calidades que se pueden observar y disfrutar hoy en día: suelo de mármol, cierres de climalit con rotura de puente térmico, persianas eléctricas, pasillos de mármol y granito, enormes zonas comunes con patio infantil y gran fuente..",
     "imagenes": [
-      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513696.jpg?rule=web_1200x0",
-      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513697.jpg?rule=web_1200x0",
-      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513698.jpg?rule=web_1200x0",
-      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513699.jpg?rule=web_1200x0",
-      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513700.jpg?rule=web_1200x0",
-      "https://static.inmofactory.com/images/inmofactory/documents/1/100349/32834868/540513701.jpg?rule=web_1200x0"
+      "https://static.inmofactory.com/images/inmofactory/documents/1/112153/32903045/544532555.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/112153/32903045/544532556.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/112153/32903045/544532557.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/112153/32903045/544532558.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/112153/32903045/544532559.jpg?rule=web_1200x0",
+      "https://static.inmofactory.com/images/inmofactory/documents/1/112153/32903045/544532560.jpg?rule=web_1200x0"
     ],
-    "calle": "Avda. Barcelona",
-    "ciudad": "Jaén",
-    "busqueda": "jaen",
-    "precio": 180000,
-    "m2": 133,
-    "planta": 4,
-    "habitaciones": 4,
-    "baños": 2,
+    "calle": "Jose Flores Camara, Ciudad Jardín - Zoco",
+    "ciudad": "Córdoba",
+    "busqueda": "cordoba",
+    "precio": 175000,
+    "m2": 74,
+    "planta": 3,
+    "habitaciones": 2,
+    "baños": 1,
     "extra": [
       "Aire acondicionado",
-      "Calefacción",
+      "Armarios",
+      "Parque",
+      "Terraza",
+      "Trastero",
       "Electrodomésticos",
+      "Balcón",
+      "Videoportero",
       "Cocina Equipada"
     ],
-    "inmobiliaria": "LIVIN GESTION INMOBILIARIA",
-    "imagenInmobiliaria": "https://static.fotocasa.es/images/client/6e997639-463f-45c9-ac2f-a367670659ca/20220909115720.jpeg?rule=web_100x52",
+    "inmobiliaria": "RK CASAS PARA VIVIR",
+    "imagenInmobiliaria": "https://static.fotocasa.es/images/client/9a9b03ae-5a5d-4793-8a20-6fc6d97feb50/20221201091102.jpeg?rule=web_100x52",
     "telefono": 123456789,
-    "email": "prueba@gmail.com"
+    "email": "prueba@gmail.com",
+    "id": "63d8008ae10623f3bf7b6dba"
   }
