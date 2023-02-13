@@ -13,7 +13,7 @@ export default function HouseList({ listFlat, housesNumberTotal, city }: any) {
             : `${housesNumberTotal} vivienda en`}{" "}
           {city}
         </h2>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-wrap gap-5 place-content-center">
           {listFlat.map((house: any) => (
             <HouseCard key={house.id} house={house}></HouseCard>
           ))}
