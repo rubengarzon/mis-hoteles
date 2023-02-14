@@ -17,17 +17,31 @@ function HouseCard({ house }: any) {
 
   return (
     <>
-      <div className="bg-sky-200 text-black rounded-lg mt-10 w-1/3 h-[420px] cursor-pointer hover:scale-105 transition duration-700">
-        <div className="flex flex-col">
-          <img
-            src={house.imagenes[0]}
-            alt={house.nombre}
-            className="w-full h-36 object-cover rounded-lg"
-          />
+      <div className="bg-sky-200 text-black rounded-3xl mt-10 w-1/2 cursor-pointer hover:scale-105 transition duration-700 shadow-md shadow-indigo-900">
+        <div className="flex">
+          <div className="flex flex-col w-[500px]">
+            <img
+              src={house.imagenes[0]}
+              alt={house.nombre}
+              className="w-full h-[257px] object-cover rounded-tl-3xl border-2 border-sky-200"
+            />
+            <div className="flex">
+              <img
+                src={house.imagenes[1]}
+                alt={house.nombre}
+                className="w-1/2 h-[115px] object-cover rounded-bl-3xl border-2 border-sky-200"
+              />
+              <img
+                src={house.imagenes[2]}
+                alt={house.nombre}
+                className="w-1/2 h-[115px] object-cover border-2 border-sky-200"
+              />
+            </div>
+          </div>
           <div className="flex flex-col text-center">
             <h2
               key={house.id}
-              className="text-xl mt-2 font-extrabold text-indigo-900"
+              className="text-xl mt-7 font-extrabold text-indigo-900"
             >
               {house.nombre}
             </h2>
