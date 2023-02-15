@@ -2,7 +2,7 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import HouseList from "../components/HouseList";
-import SearchBar from "../components/Searchbar";
+import SearchBarHome from "../components/SearchbarHome";
 import { House } from "../types";
 
 interface FormState {
@@ -22,10 +22,7 @@ export default function Home() {
           asequibles.
         </p>
       </div>
-      <SearchBar />
-
-      {/* <HouseList inputValue={inputValue} /> */}
-      {/* <Footer /> */}
+      <SearchBarHome />
     </div>
   );
 }

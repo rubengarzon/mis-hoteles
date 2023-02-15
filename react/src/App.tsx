@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import Flat from "./pages/Flat";
+import Flats from "./pages/Flats";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/viviendas/:busqueda" element={<Flat />} />
+        <Route path="/viviendas/:busqueda" element={<Flats />} />
       </Routes>
     </div>
   );

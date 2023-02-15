@@ -5,6 +5,7 @@ import { House } from "../types";
 import Header from "../components/Header";
 import HouseList from "../components/HouseList";
 import Filters from "../components/Filters";
+import SearchbarFlats from "../components/SearchbarFlats";
 
 export default function Flat() {
   const { busqueda } = useParams();
@@ -26,7 +27,8 @@ export default function Flat() {
   return (
     <div>
       <Header />
-      <Filters updateHouses={updateHouses} busqueda={busqueda}/>
+      {/* <SearchbarFlats  /> */}
+      <Filters updateHouses={updateHouses} busqueda={busqueda} />
       <HouseList
         listFlat={houses}
         city={city}

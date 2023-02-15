@@ -11,7 +11,7 @@ export default function HouseList({ listFlat, housesNumberTotal, city }: any) {
         <h2 className="text-center font-semibold text-2xl text-indigo-900">
           {housesNumberTotal === 0
             ? <NoResults />
-            : `${housesNumberTotal} viviendas en {city}`}
+            : `${housesNumberTotal} viviendas en ${city}`}
         </h2>
         <div className="flex flex-col items-center">
           {listFlat.map((house: any) => (
