@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 // definicion del Schema
-const viviendaSchema = new mongoose.Schema({
+const anuncioSchema = new mongoose.Schema({
   tipo: String,
   nombre: String,
   descripcion: String,
@@ -30,10 +30,14 @@ const viviendaSchema = new mongoose.Schema({
   inmobiliaria: String,
   imagenInmobiliaria: String,
   telefono: Number,
-  email: String
+  email: String,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
-viviendaSchema.set('toJSON', {
+anuncioSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
@@ -42,6 +46,6 @@ viviendaSchema.set('toJSON', {
 })
 
 // definicion del modelo
-const Vivienda = mongoose.model('Vivienda', viviendaSchema)
+const Anuncio = mongoose.model('Vivienda', anuncioSchema)
 
-module.exports = Vivienda
+module.exports = Anuncio
