@@ -2,13 +2,14 @@ require('dotenv').config()
 require('./mongo')
 
 const express = require('express')
+const bodyParser = require('body-parser')
 const cors = require('cors')
+const routes = require('./routes')
+
 const app = express()
 
 const notFound = require('./middleware/notFound')
 const handleErrors = require('./middleware/handleErrors')
-const usersRouter = require('./controllers/users')
-const anunciosRouter = require('./controllers/anuncios')
 
 app.use(cors())
 app.use(express.json())
@@ -19,6 +20,14 @@ app.get('/', (req, res) => {
       message: 'Bienvenido a la API de mispisos',
       endpoint: '/api/anuncios',
       description: 'Listado de anuncios de viviendas'
+    },
+    {
+      endpoint: '/api/login',
+      description: 'Login de usuario'
+    },
+    {
+      endpoint: '/api/register',
+      description: 'Registro de usuario'
     },
     {
       endpoint: '/api/anuncios/filtros',
@@ -35,9 +44,8 @@ app.get('/', (req, res) => {
     }
   ])
 })
-
-app.use('/api/anuncios', anunciosRouter)
-app.use('/api/users', usersRouter)
+app.use(bodyParser.json())
+app.use(routes)
 
 // Middleware para manejar rutas no existentes
 app.use(notFound)

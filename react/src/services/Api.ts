@@ -8,7 +8,7 @@ const API_URL = "http://127.0.0.1:3001/api/";
  * @returns - Array de viviendas de la ciudad indicada
  */
 export const getHousesByCity = (busqueda: string): Promise<House> => {
-  return fetch(`${API_URL}viviendas/${busqueda}`)
+  return fetch(`${API_URL}anuncios/${busqueda}`)
     .then((response) => response.json())
     .catch(() => {
       console.log("Error al obtener las viviendas");
@@ -59,6 +59,19 @@ export const getHouseByFilter = (ciudad: string, tipoVivienda: string, precio: s
 };
 export const getHouseByRooms = (habitaciones: string): Promise<House> => {
   return fetch(`${API_URL}viviendas/habitaciones/${habitaciones}`)
+    .then((response) => response.json())
+    .catch(() => {
+      console.log("Error al obtener las viviendas");
+    });
+};
+export const login = (user: string, password: string): Promise<House> => {
+  return fetch(`${API_URL}login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ user, password }),
+  })
     .then((response) => response.json())
     .catch(() => {
       console.log("Error al obtener las viviendas");

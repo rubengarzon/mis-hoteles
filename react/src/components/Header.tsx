@@ -16,7 +16,7 @@ export default function Header() {
               <a href="/">📌 Pon tu anuncio gratis</a>
             </li>
             <li className="mr-7 text-indigo-900 hover:bg-indigo-900 hover:text-white p-1 rounded-lg font-semibold">
-              <a href="/">👤 Iniciar sesión</a>
+              <a href="/login">👤 Iniciar sesión</a>
             </li>
           </ul>
         </nav>
