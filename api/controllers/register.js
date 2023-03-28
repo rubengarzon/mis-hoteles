@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
 
@@ -12,7 +13,12 @@ exports.register = async (req, res) => {
         .json({ message: 'El correo electrónico ya está registrado' })
     }
 
-    const user = new User({ anuncios, username, name, password })
+    const saltRounds = 10
+    const salt = await bcrypt.genSalt(saltRounds)
+
+    const passwordHash = await bcrypt.hash(password, salt)
+
+    const user = new User({ anuncios, username, name, password: passwordHash })
     await user.save()
 
     const token = jwt.sign({ userId: user.id }, 'secretKey')

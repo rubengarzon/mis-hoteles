@@ -1,8 +1,8 @@
-POST http://localhost:3001/login
+POST http://localhost:3001/api/login
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDIzMWY2NTUyMTNmYjQ3OGQ4OGI1ODMiLCJpYXQiOjE2ODAwMjM5MDJ9.Xen3RYywQI4tmViIn9IVRhy9kSLhHLSSiLnwR_UkZ3k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDIzMjY1ZGIyN2E2NjEwOTExNjkzYTAiLCJpYXQiOjE2ODAwMjU0MjN9.4OKkIyYIa65TpbJaPfLcjsLY2dyJCp5QYshXufm82Bo
 
 {
-  "username": "test2",
+  "username": "test4",
   "password": "testingaa"
 }
