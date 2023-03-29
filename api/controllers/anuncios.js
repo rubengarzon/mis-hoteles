@@ -1,4 +1,47 @@
-const anunciosRouter = require('express').Router()
+const Anuncio = require('../models/Anuncio')
+
+exports.getAnuncios = async (req, res) => {
+  const anuncios = await Anuncio.find({})
+  res.json(anuncios)
+}
+
+exports.getAnunciosFiltros = async (req, res, next) => {
+  const tipoInmueble = req.query.tipo
+  const precio = req.query.precio
+  const habitaciones = req.query.habitaciones
+
+  const query = {}
+
+  if (tipoInmueble) {
+    query['caracteristicas.tipoInmueble'] = tipoInmueble
+  }
+  if (precio) {
+    query.precio = { $lte: precio }
+  }
+  if (habitaciones) {
+    query.habitaciones = habitaciones
+  }
+
+  Anuncio.find(query)
+    .then((anuncios) => {
+      res.json(anuncios)
+    })
+    .catch((error) => {
+      next(error)
+    })
+}
+
+exports.getAnunciosCiudad = async (req, res) => {
+  const busqueda = req.params.busqueda
+  const anuncios = await Anuncio.find({ busqueda })
+  if (anuncios) {
+    res.json(anuncios)
+  } else {
+    res.status(404).end()
+  }
+}
+
+/* const anunciosRouter = require('express').Router()
 const Anuncio = require('../models/Anuncio')
 
 // Obtener todos los anuncios
@@ -84,3 +127,4 @@ anunciosRouter.post('/', async (req, res, next) => {
 })
 
 module.exports = anunciosRouter
+ */
