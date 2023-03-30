@@ -64,16 +64,16 @@ export const getHouseByRooms = (habitaciones: string): Promise<House> => {
       console.log("Error al obtener las viviendas");
     });
 };
-export const login = (user: string, password: string): Promise<House> => {
+export const login = (username: string, password: string): Promise<any> => {
   return fetch(`${API_URL}login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ user, password }),
+    body: JSON.stringify({ username, password }),
   })
     .then((response) => response.json())
     .catch(() => {
-      console.log("Error al obtener las viviendas");
+      console.log("Error al iniciar sesión");
     });
 };
