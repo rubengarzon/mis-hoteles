@@ -1,1 +1,1 @@
-GET http://localhost:3001/api/viviendas/Madrid
+GET http://localhost:3001/api/anuncios/cordoba

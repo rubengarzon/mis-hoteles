@@ -32,6 +32,8 @@ exports.getAnunciosFiltros = async (req, res, next) => {
 }
 
 exports.getAnunciosCiudad = async (req, res) => {
+  console.log('hola')
+  console.log(req.params.busqueda)
   const busqueda = req.params.busqueda
   const anuncios = await Anuncio.find({ busqueda })
   if (anuncios) {

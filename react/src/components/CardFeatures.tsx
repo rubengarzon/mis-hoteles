@@ -1,9 +1,9 @@
-function CardFeatures({ extra }: array<string>) {
+function CardFeatures({ extra }: Array<string>) {
   return (
     <>
       <div className="flex flex-wrap justify-center mt-2 gap-2">
         {extra.slice(0, 5).map((feature: string) => (
-          <span className="text-sm text-blue-200 font-bold mt-2 rounded-full border-2 border-blue-300 p-1 bg-gray-500">
+          <span key={feature} className="text-sm text-blue-200 font-bold mt-2 rounded-full border-2 border-blue-300 p-1 bg-gray-500">
             {feature}
           </span>
         ))}
