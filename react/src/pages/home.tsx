@@ -13,16 +13,16 @@ export default function Home() {
   return (
     <div className="App">
       <Header />
-      <div className="flex flex-col items-center">
-        <h2 className="text-5xl text-indigo-900 font-extrabold mt-28">
+      <div className="flex flex-col">
+        <h2 className="text-3xl text-indigo-900 font-extrabold mt-28 text-center p-2">
           Alquiler de pisos, compra y venta
         </h2>
-        <p className="text-gray-700 font-bold text-lg mt-10">
+        <p className="text-gray-700 font-bold text-lg mt-10 text-center p-2">
           aquí es donde puedes encontrar un lugar de ensueño para ti a precios
           asequibles.
         </p>
       </div>
-      <SearchBarHome />
+     <SearchBarHome />
     </div>
   );
 }

@@ -13,13 +13,13 @@ export default function SearchBar() {
 
   return (
     <>
-      <div className="mt-16 flex justify-center">
-        <div className="w-2/5">
+      <div className="mt-16 flex">
+        <div className="w-full">
           <form onSubmit={handleSubmit} className="flex mb-2">
             <input
               className="w-full border-2 border-gray-300 p-4 rounded-lg outline-none text-black mr-2"
               type="text"
-              placeholder="Ciudad"
+              placeholder="Madrid"
               onChange={handleChange}
               value={inputValue}
               list="cities"

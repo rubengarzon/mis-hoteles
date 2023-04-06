@@ -16,7 +16,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="flex justify-center mt-32">
+      <div className="flex justify-center mt-10">
         <form onSubmit={handleSubmit} className="flex flex-col">
           <label htmlFor="username" className="mb-5 font-bold">
             Usuario:
