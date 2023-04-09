@@ -28,6 +28,11 @@ export const getHouseByPropertyType = (
       console.log("Error al obtener las viviendas");
     });
 };
+/**
+ * Obtiene todas las viviendas de la base de datos que coincidan con el precio indicado
+ * @param precio - Precio de la que se quieren obtener las viviendas
+ * @returns - Array de viviendas del precio indicado
+ */
 export const getHouseByPrice = (precio: string): Promise<House> => {
   return fetch(`${API_URL}viviendas/precio/${precio}`)
     .then((response) => response.json())
@@ -35,19 +40,31 @@ export const getHouseByPrice = (precio: string): Promise<House> => {
       console.log("Error al obtener las viviendas");
     });
 };
-export const getHouseByFilter = (ciudad: string, tipoVivienda: string, precio: string, habitaciones: string): Promise<House> => {
-
+/**
+ * Obtiene las viviendas de la base de datos que coincidan con los filtros indicados
+ * @param ciudad - Ciudad de la que se quieren obtener las viviendas
+ * @param tipoVivienda - Tipo de vivienda de la que se quieren obtener las viviendas
+ * @param precio - Precio de la que se quieren obtener las viviendas
+ * @param habitaciones - Habitaciones de la que se quieren obtener las viviendas
+ * @returns - Array de viviendas que coincidan con los filtros indicados
+ */
+export const getHouseByFilter = (
+  ciudad: string,
+  tipoVivienda: string,
+  precio: string,
+  habitaciones: string
+): Promise<House> => {
   let query = "";
 
-  if(tipoVivienda.length > 0){
+  if (tipoVivienda.length > 0) {
     query += `&tipo=${tipoVivienda}`;
   }
 
-  if(precio.length > 0){
+  if (precio.length > 0) {
     query += `&precio=${precio}`;
   }
 
-  if(habitaciones.length > 0){
+  if (habitaciones.length > 0) {
     query += `&habitaciones=${habitaciones}`;
   }
 
@@ -64,6 +81,12 @@ export const getHouseByRooms = (habitaciones: string): Promise<House> => {
       console.log("Error al obtener las viviendas");
     });
 };
+/**
+ * Login de usuario
+ * @param username - Nombre de usuario
+ * @param password - Contraseña
+ * @returns - Usuario
+ */
 export const login = (username: string, password: string): Promise<any> => {
   return fetch(`${API_URL}login`, {
     method: "POST",
@@ -75,5 +98,29 @@ export const login = (username: string, password: string): Promise<any> => {
     .then((response) => response.json())
     .catch(() => {
       console.log("Error al iniciar sesión");
+    });
+};
+/**
+ * Registro de usuario
+ * @param username - Nombre de usuario
+ * @param name - Nombre
+ * @param password - Contraseña
+ * @returns - Usuario
+ */
+export const register = (
+  username: string,
+  name: string,
+  password: string
+): Promise<any> => {
+  return fetch(`${API_URL}register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, name, password }),
+  })
+    .then((response) => response.json())
+    .catch(() => {
+      console.log("Error al registrar usuario");
     });
 };

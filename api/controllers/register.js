@@ -10,7 +10,7 @@ exports.register = async (req, res) => {
     if (existingUser) {
       return res
         .status(409)
-        .json({ message: 'El correo electrónico ya está registrado' })
+        .json({ message: 'El usuario está registrado' })
     }
 
     const saltRounds = 10
@@ -22,7 +22,7 @@ exports.register = async (req, res) => {
     await user.save()
 
     const token = jwt.sign({ userId: user.id }, 'secretKey')
-    res.status(201).json({ token })
+    res.status(201).json({ token, username })
   } catch (error) {
     res.status(500).json({ message: 'Error interno del servidor' })
   }
