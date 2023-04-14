@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
 import Register from "./pages/Register";
 import PostAd from "./pages/PostAd";
+import PostAdDetail from "./pages/PostAdDetail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/nuevo-usuario" element={<Register />} />
         <Route path="/publica-anuncio" element={<PostAd />} />
+        <Route path="/publica-anuncio/2" element={<PostAdDetail />} />
         <Route path="*" element={<h1>404: Not Found</h1>} />
       </Routes>
     </div>
