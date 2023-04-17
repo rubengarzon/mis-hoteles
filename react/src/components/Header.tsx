@@ -1,19 +1,26 @@
 import { useEffect, useState } from "react";
+import { getAvatar } from "../services/Api";
 
 export default function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [isOnline, setIsOnline] = useState(false);
+  const [avatar, setAvatar] = useState<Blob | void>();
   const username = localStorage.getItem("username");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    if (username) {
+      getAvatar(username).then((response) => {
+        setAvatar(response);
+      });
+    }
 
     if (token) {
       setIsOnline(true);
     } else {
       setIsOnline(false);
     }
-  }, []);
+  }, [username]);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -60,12 +67,21 @@ export default function Header() {
               onClick={toggleMenu}
             >
               <span className="sr-only">Open main menu</span>
-              <img
-                src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
+              {avatar ? (
+                <img
+                  src={URL.createObjectURL(avatar)}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+              ) : (
+                <img
+                  src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+              )}
               <span className="ml-2">{username}</span>
             </button>
           ) : (
@@ -86,9 +102,7 @@ export default function Header() {
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                ></path>
+                <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
               </svg>
             </button>
           )}
@@ -131,7 +145,10 @@ export default function Header() {
         >
           <ul className="flex flex-col gap-2 text-center">
             <li>
-              <a href="/publica-anuncio" className="font-bold text-lg text-white">
+              <a
+                href="/publica-anuncio"
+                className="font-bold text-lg text-white"
+              >
                 📌 Pon tu anuncio gratis
               </a>
             </li>

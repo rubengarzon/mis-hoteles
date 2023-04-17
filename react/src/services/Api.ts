@@ -124,3 +124,16 @@ export const register = (
       console.log("Error al registrar usuario");
     });
 };
+
+export const getAvatar = (name: string) => {
+  return fetch(`https://ui-avatars.com/api/?name=${name}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al obtener el avatar");
+      }
+      return response.blob();
+    })
+    .catch(() => {
+      console.log("Error al obtener el avatar");
+    });
+};
