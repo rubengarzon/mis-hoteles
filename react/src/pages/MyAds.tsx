@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import Header from "../components/Header";
-import { getAdsUser, editAd } from "../services/Api";
+import { getAdsUser, deleteAd } from "../services/Api";
 import { useState } from "react";
 import { Ad } from "../types/ad";
+import { toast } from "sonner";
 
 function MisAnuncios() {
   const [ads, setAds] = useState<Ad[]>([]);
@@ -15,10 +16,20 @@ function MisAnuncios() {
     }
   }, []);
 
-  /* const handleDelete = (adId) => {
-    console.log(`Eliminar anuncio con ID: \${adId}`);
-    // Aquí puedes agregar la lógica para eliminar el anuncio
-  }; */
+  const handleDeleteAd = async (id: string) => {
+  try {
+    const response = await deleteAd(id);
+    if (response === 204) {
+      setAds(ads.filter((anuncio) => anuncio.id !== id));
+      toast.success("Anuncio eliminado correctamente");
+    } else {
+      toast.error("Error al eliminar el anuncio");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
   return (
     <>
@@ -57,7 +68,12 @@ function MisAnuncios() {
                     />
                   </svg>
                 </a>
-                <button className="text-black px-2 py-2 rounded-md">
+                <button
+                  onClick={() => {
+                    handleDeleteAd(ad.id);
+                  }}
+                  className="text-black px-2 py-2 rounded-md"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

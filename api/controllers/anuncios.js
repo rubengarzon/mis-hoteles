@@ -129,13 +129,13 @@ exports.putAnuncio = async (req, res, next) => {
  */
 exports.deleteAnuncio = async (req, res, next) => {
   const id = req.params.id
-  Anuncio.findByIdAndRemove(id)
-    .then((result) => {
-      res.status(204).end()
-    })
-    .catch((error) => {
-      next(error)
-    })
+  try {
+    await Anuncio.findByIdAndRemove(id)
+    res.status(204).end()
+    return
+  } catch (error) {
+    next(error)
+  }
 }
 /**
  *  Obtener un anuncio

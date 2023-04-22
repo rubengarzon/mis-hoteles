@@ -179,3 +179,14 @@ export const getAnuncio = (id: string): Promise<any> => {
       console.log("Error al obtener el anuncio");
     });
 };
+export const deleteAd = (id: string) => {
+  return fetch(`${API_URL}anuncios/delete/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      return response.status;
+    })
+    .catch(() => {
+      console.log("Error al eliminar el anuncio");
+    });
+};

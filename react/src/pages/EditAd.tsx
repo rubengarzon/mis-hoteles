@@ -30,11 +30,10 @@ function EditAd() {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(anuncio);
+    if (!id || !anuncio) return;
     editAd(id, anuncio).then((res) => {
-      console.log(anuncio);
       if (res) {
         toast.success("Anuncio editado con éxito");
         navigate("/mis-anuncios");

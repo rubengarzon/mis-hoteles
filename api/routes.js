@@ -13,5 +13,6 @@ router.get('/api/anuncios/user/:userId', anunciosController.getAnunciosUser)
 router.get('/api/filtros', anunciosController.getAnunciosFiltros)
 router.put('/api/anuncios/update/:id', anunciosController.putAnuncio)
 router.get('/api/anuncio/:id', anunciosController.getAnuncio)
+router.delete('/api/anuncios/delete/:id', anunciosController.deleteAnuncio)
 
 module.exports = router
