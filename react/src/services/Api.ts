@@ -1,4 +1,5 @@
 import { House } from "../types";
+import { Ad } from "../types/ad";
 
 const API_URL = "http://127.0.0.1:3001/api/";
 
@@ -68,7 +69,7 @@ export const getHouseByFilter = (
     query += `&habitaciones=${habitaciones}`;
   }
 
-  return fetch(`${API_URL}viviendas/filtros?ciudad=${ciudad}${query}`)
+  return fetch(`${API_URL}filtros?ciudad=${ciudad}${query}`)
     .then((response) => response.json())
     .catch(() => {
       console.log("Error al obtener las viviendas");
@@ -124,7 +125,11 @@ export const register = (
       console.log("Error al registrar usuario");
     });
 };
-
+/**
+ * Obtiene el avatar del usuario
+ * @param name - Nombre del usuario
+ * @returns - Avatar del usuario
+ */
 export const getAvatar = (name: string) => {
   return fetch(`https://ui-avatars.com/api/?name=${name}`)
     .then((response) => {
@@ -135,5 +140,42 @@ export const getAvatar = (name: string) => {
     })
     .catch(() => {
       console.log("Error al obtener el avatar");
+    });
+};
+/**
+ * Obtiene los anuncios del usuario
+ * @param id - Id del usuario
+ * @returns - Anuncios del usuario
+ */
+export const getAdsUser = (id: string): Promise<any> => {
+  return fetch(`${API_URL}anuncios/user/${id}`)
+    .then((response) => response.json())
+    .catch(() => {
+      console.log("Error al obtener los anuncios del usuario");
+    });
+};
+/**
+ * Actualiza un anuncio de la base de datos
+ * @param id - Id del anuncio
+ * @returns - Anuncio
+ */
+export const editAd = (id: string, ad: Ad) => {
+  return fetch(`${API_URL}anuncios/update/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(ad),
+  })
+    .then((response) => response.json())
+    .catch(() => {
+      console.log("Error al editar el anuncio");
+    });
+};
+export const getAnuncio = (id: string): Promise<any> => {
+  return fetch(`${API_URL}anuncio/${id}`)
+    .then((response) => response.json())
+    .catch(() => {
+      console.log("Error al obtener el anuncio");
     });
 };

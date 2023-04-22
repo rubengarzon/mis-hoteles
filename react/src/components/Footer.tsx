@@ -3,10 +3,9 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="mt-auto h-20 flex items-center text-center bg-blue-400">
-        <h2 className="text-md text-black w-full">
-          Rubén Garzón Copyright © {añoActual}
-        </h2>
+      <footer className="h-12 flex gap-5 items-center text-center place-content-center mt-20 md:mt-28">
+        <span>Desarrollado por Rubén Garzón</span>
+        <a href="https://rubengarzon.vercel.app/#proyectos" className="underline cursor-pointer" target="_blank">Mis proyectos</a>
       </footer>
     </>
   );

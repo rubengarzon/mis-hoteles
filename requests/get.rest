@@ -1,1 +1,1 @@
-GET http://localhost:3001
+GET http://127.0.0.1:3001/api/anuncio/643ed42a9e126777a306e26d

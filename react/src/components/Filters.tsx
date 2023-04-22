@@ -1,13 +1,16 @@
 import { ChangeEvent, useState } from "react";
-import {
-  getHousesByCity,
-  getHouseByFilter,
-} from "../services/Api";
+import { getHousesByCity, getHouseByFilter } from "../services/Api";
+import { uiSearchFilters } from "../js/util";
+import { useEffect } from "react";
 
 export default function filters({ updateHouses, busqueda }: any) {
   const [selectTipoVivienda, setSelectTipoVivienda] = useState<string>("");
   const [selectPrecio, setSelectPrecio] = useState<string>("");
   const [selectRooms, setSelectRooms] = useState<string>("");
+
+  useEffect(() => {
+    uiSearchFilters();
+  }, []);
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const id = e.target.id;
@@ -45,9 +48,9 @@ export default function filters({ updateHouses, busqueda }: any) {
 
   const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if(errorMessagesFilters() === true) {
+    if (errorMessagesFilters() === true) {
       errorMessagesFilters();
-    }else{
+    } else {
       getHouseByFilter(
         busqueda,
         selectTipoVivienda,
@@ -79,7 +82,51 @@ export default function filters({ updateHouses, busqueda }: any) {
 
   return (
     <>
-      <div className="mt-10 flex place-content-center w-full">
+      <div className="mt-10 flex flex-wrap place-content-center w-full gap-2">
+        <div>
+          <span
+            id="rooms"
+            className="text-black font-bold flex items-center hover:underline hover:cursor-pointer"
+          >
+            Habitaciones
+            <svg
+              id="rooms__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-4 h-4 ml-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+            <svg
+              id="rooms__icon__close"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-4 h-4 hidden ml-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 15.75l7.5-7.5 7.5 7.5"
+              />
+            </svg>
+          </span>
+          <div
+            id="rooms__icon__block"
+            className="bg-white w-32 h-32 shadow-md hidden"
+          >
+            <button className="border-2 w-full p2 text-black">1+</button>
+          </div>
+        </div>
         <select
           className="bg-gray-200 rounded-md p-2 border-black border-2 hover:bg-blue-300"
           onChange={handleChange}
@@ -111,13 +158,13 @@ export default function filters({ updateHouses, busqueda }: any) {
           <option value="+3">3</option>
         </select>
         <button
-          className="bg-indigo-700 text-white rounded-md p-2 ml-2 hover:bg-indigo-800"
+          className="text-black border-2 border-black rounded-md p-2 ml-2"
           onClick={handleSubmit}
         >
           Aplicar
         </button>
         <button
-          className="bg-red-700 text-white rounded-md p-2 ml-2 hover:bg-red-800"
+          className="text-black border-2 border-black rounded-md p-2 ml-2"
           onClick={resetFilters}
         >
           Borrar

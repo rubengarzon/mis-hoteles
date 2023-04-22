@@ -13,8 +13,8 @@ export default function SearchBar() {
 
   return (
     <>
-      <div className="mt-16 flex">
-        <div className="w-full">
+      <div className="mt-10 flex">
+        <div className="w-full mx-6">
           <form onSubmit={handleSubmit} className="flex mb-2">
             <input
               className="w-full border-2 border-gray-300 p-4 rounded-lg outline-none text-black mr-2"
@@ -30,10 +30,12 @@ export default function SearchBar() {
               ))}
             </datalist>
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white text-3xl font-bold py-2 px-4 rounded-lg"
+              className="bg-black text-white text-3xl font-bold py-2 px-4 rounded-lg"
               type="submit"
             >
-              🔎
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+             </svg>
             </button>
           </form>
           <RenderError error={error} />

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 // definicion del Schema
 const anuncioSchema = new mongoose.Schema({
+  id: String,
   tipo: String,
   nombre: String,
   descripcion: String,

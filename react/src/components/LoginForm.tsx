@@ -13,6 +13,7 @@ const LoginForm = () => {
     login(username as string, password as string).then((response) => {
       localStorage.setItem("token", response.token);
       localStorage.setItem("username", response.username);
+      localStorage.setItem("userId", response.id);
       navigate("/");
     });
   }

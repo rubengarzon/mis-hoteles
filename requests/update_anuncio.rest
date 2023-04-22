@@ -1,0 +1,29 @@
+PUT http://localhost:3001/api/anuncios/update/643ed42a9e126777a306e26d
+Content-Type: application/json
+
+   {
+  "_id": "643ed42a9e126777a306e26d",
+  "tipo": "Alquiler",
+  "nombre": "eee",
+  "descripcion": "zzz",
+  "imagenes": [],
+  "calle": "zzz",
+  "ciudad": "Castellón",
+  "busqueda": "",
+  "precio": 1,
+  "m2": 1,
+  "planta": null,
+  "habitaciones": 1,
+  "baños": 1,
+  "caracteristicas": {
+    "tipoInmueble": "Piso"
+  },
+  "extra": [
+    ""
+  ],
+  "inmobiliaria": "",
+  "imagenInmobiliaria": "",
+  "telefono": null,
+  "email": "",
+  "__v": 0
+}

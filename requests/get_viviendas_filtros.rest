@@ -1,1 +1,1 @@
-GET http://localhost:3001/api/viviendas/filtros?tipo=atico
+GET http://localhost:3001/api/anuncios/filtros?ciudad=cordoba&

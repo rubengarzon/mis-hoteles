@@ -20,7 +20,7 @@ exports.login = async (req, res) => {
     }
 
     const token = jwt.sign({ userId: user.id }, 'secretKey')
-    res.json({ token, username })
+    res.json({ token, username, id: user.id })
   } catch (error) {
     res.status(500).json({ message: 'Error al iniciar sesión' })
   }

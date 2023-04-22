@@ -1,14 +1,26 @@
 const Anuncio = require('../models/Anuncio')
-
+const Users = require('../models/User')
+/**
+ *  Obtener todos los anuncios
+ * @param {*} req  req.query.tipo, req.query.precio, req.query.habitaciones
+ * @param {*} res  res.json(anuncios)
+ */
 exports.getAnuncios = async (req, res) => {
   const anuncios = await Anuncio.find({})
   res.json(anuncios)
 }
-
+/**
+ * Obtener anuncios por filtros
+ * @param {*} req  req.query.tipo, req.query.precio, req.query.habitaciones
+ * @param {*} res  res.json(anuncios)
+ * @param {*} next  next(error)
+ */
 exports.getAnunciosFiltros = async (req, res, next) => {
   const tipoInmueble = req.query.tipo
   const precio = req.query.precio
   const habitaciones = req.query.habitaciones
+
+  console.log(habitaciones)
 
   const query = {}
 
@@ -30,10 +42,12 @@ exports.getAnunciosFiltros = async (req, res, next) => {
       next(error)
     })
 }
-
+/**
+ *  Obtener anuncios por ciudad
+ * @param {*} req  req.params.busqueda
+ * @param {*} res  res.json(anuncios)
+ */
 exports.getAnunciosCiudad = async (req, res) => {
-  console.log('hola')
-  console.log(req.params.busqueda)
   const busqueda = req.params.busqueda
   const anuncios = await Anuncio.find({ busqueda })
   if (anuncios) {
@@ -42,69 +56,78 @@ exports.getAnunciosCiudad = async (req, res) => {
     res.status(404).end()
   }
 }
+/**
+ *  Subir un anuncio
+ * @param {*} req req.body
+ * @param {*} res res.json(savedAnuncio)
+ * @param {*} next next(error)
+ */
+exports.adUpload = async (req, res, next) => {
+  const anuncio = new Anuncio(req.body)
+  const userId = req.body.userId
+  try {
+    const savedAnuncio = await anuncio.save()
+    const userVivienda = await Users.findOne({ _id: userId })
 
-/* const anunciosRouter = require('express').Router()
-const Anuncio = require('../models/Anuncio')
+    if (!userVivienda) {
+      throw new Error('No existe el usuario')
+    }
 
-// Obtener todos los anuncios
-anunciosRouter.get('/', async (req, res) => {
-  const viviendas = await Anuncio.find({})
-  res.json(viviendas)
-})
+    userVivienda.anuncios.push(savedAnuncio._id)
+    await userVivienda.save()
 
-// obtener anuncios por filtros
-anunciosRouter.get('/filtros', async (req, res, next) => {
-  const tipoInmueble = req.query.tipo
-  const precio = req.query.precio
-  const habitaciones = req.query.habitaciones
-
-  const query = {}
-
-  if (tipoInmueble) {
-    query['caracteristicas.tipoInmueble'] = tipoInmueble
+    res.json(savedAnuncio)
+  } catch (error) {
+    next(error)
   }
-  if (precio) {
-    query.precio = { $lte: precio }
-  }
-  if (habitaciones) {
-    query.habitaciones = habitaciones
-  }
+}
+/**
+ * Obtener anuncios de un usuario
+ * @param {*} req  req.params.userId
+ * @param {*} res  res.json(anunciosUser)
+ * @param {*} next  next(error)
+ * @returns anunciosUser
+ */
+exports.getAnunciosUser = async (req, res, next) => {
+  try {
+    const userId = req.params.userId
+    const user = await Users.findOne({ _id: userId })
 
-  Anuncio.find(query)
-    .then((viviendas) => {
-      res.json(viviendas)
-    })
-    .catch((error) => {
-      next(error)
-    })
-})
+    if (!user) {
+      return res.status(404).json({ message: 'Usuario no encontrado' })
+    }
 
-// Obtener anuncios por ciudad
-anunciosRouter.get('/:busqueda', async (req, res, next) => {
-  const busqueda = req.params.busqueda
-  const viviendas = await Anuncio.find({ busqueda })
-  if (viviendas) {
-    res.json(viviendas)
-  } else {
-    res.status(404).end()
+    const anunciosUser = await Anuncio.find({ _id: { $in: user.anuncios } })
+
+    res.json(anunciosUser)
+  } catch (error) {
+    next(error)
   }
-})
-
-// Actualizar un anuncio
-anunciosRouter.put('/:id', async (req, res, next) => {
+}
+/**
+ *  Actualizar un anuncio
+ * @param {*} req req.params.id, req.body
+ * @param {*} res res.json(result)
+ * @param {*} next next(error)
+ */
+exports.putAnuncio = async (req, res, next) => {
   const id = req.params.id
-  const vivienda = req.body
-  Anuncio.findByIdAndUpdate(id, vivienda, { new: true })
+  const anuncio = req.body
+  Anuncio.findByIdAndUpdate(id, anuncio, { new: true })
     .then((result) => {
       res.json(result)
     })
     .catch((error) => {
       next(error)
     })
-})
-
-// Borrar un anuncio
-anunciosRouter.delete('/:id', async (req, res, next) => {
+}
+/**
+ * Eliminar un anuncio
+ * @param {*} req req.params.id
+ * @param {*} res res.status(204).end()
+ * @param {*} next next(error)
+ */
+exports.deleteAnuncio = async (req, res, next) => {
   const id = req.params.id
   Anuncio.findByIdAndRemove(id)
     .then((result) => {
@@ -113,20 +136,20 @@ anunciosRouter.delete('/:id', async (req, res, next) => {
     .catch((error) => {
       next(error)
     })
-})
-
-// Guardar un anuncio
-anunciosRouter.post('/', async (req, res, next) => {
-  const anuncio = new Anuncio(req.body)
-  anuncio
-    .save()
-    .then((savedAnuncio) => {
-      res.json(savedAnuncio)
+}
+/**
+ *  Obtener un anuncio
+ * @param {*} req  req.params.id
+ * @param {*} res  res.json(result)
+ * @param {*} next  next(error)
+ */
+exports.getAnuncio = async (req, res, next) => {
+  const id = req.params.id
+  Anuncio.findById(id)
+    .then((result) => {
+      res.json(result)
     })
     .catch((error) => {
       next(error)
     })
-})
-
-module.exports = anunciosRouter
- */
+}

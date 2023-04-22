@@ -16,14 +16,14 @@ function AdForm({ onSubmit }) {
         className="flex flex-col gap-4 mt-4 mx-2 mb-4"
         id="post-ad"
       >
-        <label htmlFor="tipo-inmueble" className="text-2xl font-bold">
+        <label htmlFor="tipo" className="text-2xl font-bold">
           Elige el tipo de inmueble
         </label>
         <select
-          name="tipo-inmueble"
-          id="tipo-inmueble"
-          {...register("tipo-inmueble", { required: true })}
-          aria-invalid={errors["tipo-inmueble"] ? "true" : "false"}
+          name="tipo"
+          id="tipo"
+          {...register("tipo", { required: true })}
+          aria-invalid={errors["tipo"] ? "true" : "false"}
           className="p-1 rounded-full"
         >
           <option value="">Selecciona</option>
@@ -34,7 +34,7 @@ function AdForm({ onSubmit }) {
           <option value="Estudio">Estudio</option>
           <option value="Duplex">Dúplex</option>
         </select>
-        {errors["tipo-inmueble"] && (
+        {errors["tipo"] && (
           <span className="text-white text-sm bg-red-600 rounded-md p-2 animate-bounce">
             Por favor, selecciona un tipo de inmueble
           </span>
@@ -96,21 +96,6 @@ function AdForm({ onSubmit }) {
         {errors["calle"] && (
           <span className="text-white text-sm bg-red-600 rounded-md p-2 animate-bounce">
             Por favor, introduce una calle
-          </span>
-        )}
-        <label htmlFor="numero" className="text-lg">
-          Número
-        </label>
-        <input
-          type="number"
-          name="numero"
-          id="numero"
-          {...register("numero", { required: true })}
-          aria-invalid={errors["numero"] ? "true" : "false"}
-        />
-        {errors["numero"] && (
-          <span className="text-white text-sm bg-red-600 rounded-md p-2 animate-bounce">
-            Por favor, introduce un número
           </span>
         )}
         <input
