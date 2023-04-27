@@ -63,8 +63,12 @@ exports.getAnunciosCiudad = async (req, res) => {
  * @param {*} next next(error)
  */
 exports.adUpload = async (req, res, next) => {
-  const anuncio = new Anuncio(req.body)
+  const anuncioData = new Anuncio(req.body)
+  anuncioData.imagenes = req.files.map((file) => file.path)
+
+  const anuncio = new Anuncio(anuncioData)
   const userId = req.body.userId
+
   try {
     const savedAnuncio = await anuncio.save()
     const userVivienda = await Users.findOne({ _id: userId })

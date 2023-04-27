@@ -21,7 +21,7 @@ function PostAdImg() {
       tipo: ad.tipo,
       nombre: ad.nombre,
       descripcion: ad.descripcion,
-      imagenes: [],
+      imagenes: ad.imagenes,
       calle: ad.calle,
       ciudad: ad.ciudad,
       busqueda: "",
@@ -38,12 +38,22 @@ function PostAdImg() {
       email: "",
     };
 
+    const formData = new FormData();
+    for (const key in adNew) {
+      formData.append(key, adNew[key]);
+    }
+    formData.append('userId', userId);
+    const imageFile1 = document.querySelector('#img1').files[0];
+    const imageFile2 = document.querySelector('#img2').files[0];
+    const imageFile = [imageFile1, imageFile2];
+    imageFile.forEach((file) => {
+      formData.append('imagenes', file);
+    });
+
+
     fetch("http://localhost:3001/api/anuncios/upload", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...adNew, userId: userId}),
+      body: formData,
     })
       .then((res) => navigate("/mis-anuncios"))
       .then((data) => {
@@ -75,7 +85,7 @@ function PostAdImg() {
               {...register(`imagenes`)}
               type="file"
               accept="image/*"
-              id={`photo\${i}`}
+              id={`img${i}`}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
