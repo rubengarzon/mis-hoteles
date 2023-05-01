@@ -1,0 +1,1 @@
+GET http://localhost:3001/api/anuncio/644ab12e0b5079d9397e455a

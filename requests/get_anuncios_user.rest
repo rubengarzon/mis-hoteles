@@ -1,1 +1,1 @@
-GET http://localhost:3001/api/anuncios/user/642ef7f3649e7d3aa3686317
+GET http://localhost:3001/api/anuncios/user/644ab12e0b5079d9397e455a

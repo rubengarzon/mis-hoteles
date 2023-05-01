@@ -42,6 +42,11 @@ function MisAnuncios() {
               key={ad.id}
               className="p-4 border border-gray-300 rounded-md shadow-md bg-white"
             >
+              <img
+                src={`http://localhost:3001/${ad.imagenes[0]}`}
+                alt={ad.nombre}
+                className="w-full h-48 object-cover"
+              />
               <h2 className="text-xl font-semibold mt-4">
                 Título: {ad.nombre}
               </h2>

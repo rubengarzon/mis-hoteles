@@ -2,6 +2,7 @@ require('dotenv').config()
 require('./mongo')
 
 const express = require('express')
+const path = require('path')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const routes = require('./routes')
@@ -13,6 +14,10 @@ const handleErrors = require('./middleware/handleErrors')
 
 app.use(cors())
 app.use(express.json())
+// Configuración para servir archivos estáticos desde la carpeta 'uploads'
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')))
+console.log(path.join(__dirname, '../uploads'))
+
 // Ruta de inicio
 app.get('/', (req, res) => {
   res.json([

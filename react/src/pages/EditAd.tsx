@@ -12,7 +12,9 @@ function EditAd() {
 
   useEffect(() => {
     if (!id) return;
-    getAnuncio(id).then((res) => setAnuncio(res));
+    getAnuncio(id).then((res) => {
+      setAnuncio(res);
+    });
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

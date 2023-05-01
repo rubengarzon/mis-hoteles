@@ -63,14 +63,17 @@ exports.getAnunciosCiudad = async (req, res) => {
  * @param {*} next next(error)
  */
 exports.adUpload = async (req, res, next) => {
-  const anuncioData = new Anuncio(req.body)
+  const requestBody = {
+    ...req.body,
+    caracteristicas: JSON.parse(req.body.caracteristicas)
+  }
+  const anuncioData = new Anuncio(requestBody)
   anuncioData.imagenes = req.files.map((file) => file.path)
 
-  const anuncio = new Anuncio(anuncioData)
   const userId = req.body.userId
 
   try {
-    const savedAnuncio = await anuncio.save()
+    const savedAnuncio = await anuncioData.save()
     const userVivienda = await Users.findOne({ _id: userId })
 
     if (!userVivienda) {
@@ -117,6 +120,7 @@ exports.getAnunciosUser = async (req, res, next) => {
 exports.putAnuncio = async (req, res, next) => {
   const id = req.params.id
   const anuncio = req.body
+  console.log(anuncio)
   Anuncio.findByIdAndUpdate(id, anuncio, { new: true })
     .then((result) => {
       res.json(result)

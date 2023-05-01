@@ -30,7 +30,9 @@ function PostAdImg() {
       planta: "",
       habitaciones: ad.habitaciones,
       baños: ad.baños,
-      caracteristicas: ad.caracteristicas,
+      caracteristicas: {
+        tipoInmueble: ad.caracteristicas.tipoInmueble,
+      },
       extra: [""],
       inmobiliaria: "",
       imagenInmobiliaria: "",
@@ -40,7 +42,11 @@ function PostAdImg() {
 
     const formData = new FormData();
     for (const key in adNew) {
-      formData.append(key, adNew[key]);
+      if(key === 'caracteristicas') {
+        formData.append(key, JSON.stringify(adNew[key]));
+      }else{
+        formData.append(key, adNew[key]);
+      }
     }
     formData.append('userId', userId);
     const imageFile1 = document.querySelector('#img1').files[0];
@@ -49,7 +55,6 @@ function PostAdImg() {
     imageFile.forEach((file) => {
       formData.append('imagenes', file);
     });
-
 
     fetch("http://localhost:3001/api/anuncios/upload", {
       method: "POST",
