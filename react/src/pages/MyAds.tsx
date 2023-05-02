@@ -35,7 +35,10 @@ function MisAnuncios() {
     <>
       <Header />
       <div className="container mx-auto mt-2">
-        <h1 className="text-2xl font-bold text-center">Anuncios publicados</h1>
+        {ads.length === 0 && (
+
+          <h2 className="text-center mt-4 text-xl font-bold">No hay anuncios publicados</h2>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 mx-6">
           {ads.map((ad) => (
             <div
