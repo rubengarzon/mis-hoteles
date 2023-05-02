@@ -1,13 +1,6 @@
-import { useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import HouseList from "../components/HouseList";
 import SearchBarHome from "../components/SearchbarHome";
-import { House } from "../types";
-
-interface FormState {
-  houses: House;
-}
 
 export default function Home() {
   return (
